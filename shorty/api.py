@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, json
-from shorty.factories.provider import Provider
+from shorty.providers.provider_proxy import ProviderProxy
 import bleach
 
 api = Blueprint('api', __name__)
@@ -16,8 +16,8 @@ def create_shortlink():
         if inputIsValidated['success'] != False:
             url = bleach.clean(request.json['url'])
             providerName: str = bleach.clean(request.json['provider'])
-            providerFactory  = Provider(url, providerName)
-            response = providerFactory.callProvider()
+            providerProxy  = ProviderProxy(url, providerName)
+            response = providerProxy.callProvider()
         else:
             response = inputIsValidated
     else:

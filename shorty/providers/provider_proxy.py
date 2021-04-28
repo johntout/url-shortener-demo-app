@@ -1,7 +1,7 @@
 from shorty.providers.bitly import Bitly
 from shorty.providers.tinyurl import TinyUrl
 
-class Provider:
+class ProviderProxy:
     validProviders: dict = {
         'primaryProvider': 'Bitly',
         'fallBackProvider': 'TinyUrl'
@@ -39,4 +39,3 @@ class Provider:
     @staticmethod
     def errorResponse() -> dict:
         return {'success':False, 'message':'There was an issue while contacting the providers. Please try again later.', 'status': 500}
-        
