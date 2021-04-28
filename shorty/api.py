@@ -39,6 +39,11 @@ def __validateRequestIsJson():
 def __validateInput(data: dict) -> dict:
     response:dict = {'success': True}
 
+    if "url" not in data or "provider" not in data:
+        response['success'] = False
+        response['message'] = 'Url field and provider fields are required!'
+        return response
+
     if type(data['url']) != str or type(data['provider']) != str:
         response['success'] = False
         response['message'] = 'Url field and provider field must be strings!'  
