@@ -24,7 +24,7 @@ class Provider:
                 if (self.provider == self.validProviders['primaryProvider']):
                     providerInstance = globals()[self.validProviders['fallBackProvider']]
                 else:
-                    providerInstance = globals()[self.providers['primaryProvider']]
+                    providerInstance = globals()[self.validProviders['primaryProvider']]
 
                 service = providerInstance(self.url)
                 shortenedUrl = service.shortenUrl()
