@@ -1,7 +1,7 @@
 Software Engineer Task
 ======================
 
-At Plum, we have a lot of services that need to work together to deliver our product.
+We have a lot of services that need to work together to deliver our product.
 Many of these services talk to third-party providers to perform their operations – for
 example moving money, performing background checks, sending messages or emails, etc.
 
@@ -73,8 +73,3 @@ Resources
 2. `pytest`: http://pytest.org/latest/
 3. `virtualenvwrapper`: https://virtualenvwrapper.readthedocs.io/en/latest/
 4. `HTTP statuses`: https://httpstatuses.com/
-
-Disclaimer
-----------
-
-We will not use any of this code for any of Plum's applications.
